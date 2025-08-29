@@ -1,32 +1,41 @@
-import { Link, Stack } from 'expo-router';
 import { StyleSheet } from 'react-native';
-
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTheme } from '../src/theme';
+import { Container, Text, Button } from '../src/ui/atoms';
 
 export default function NotFoundScreen() {
+  const theme = useTheme();
+
   return (
-    <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">This screen does not exist.</ThemedText>
-        <Link href="/" style={styles.link}>
-          <ThemedText type="link">Go to home screen!</ThemedText>
-        </Link>
-      </ThemedView>
-    </>
+    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.bg }]}>
+      <Container padding={24} style={styles.content}>
+        <Text variant="title" weight="semibold" style={styles.title}>
+          This screen does not exist.
+        </Text>
+        <Button
+          title="Go to home screen"
+          onPress={() => {}}
+          style={styles.button}
+        />
+      </Container>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
   },
-  link: {
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  button: {
     marginTop: 15,
-    paddingVertical: 15,
   },
 });
