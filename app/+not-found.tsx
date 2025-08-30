@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTheme } from '../src/theme';
-import { Container, Text, Button } from '../src/ui/atoms';
+import { useTheme } from '@/src/theme';
+import { Container, Text, Button } from '@/src/ui/atoms';
 
 export default function NotFoundScreen() {
   const theme = useTheme();

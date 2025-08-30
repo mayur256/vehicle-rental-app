@@ -2,9 +2,6 @@ import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../../theme';
 import { Container, Text } from '../atoms';
-import type { HomeTabsScreenProps } from '../../navigation/types';
-
-type Props = HomeTabsScreenProps<'Profile'>;
 
 export function ProfilePage() {
   const theme = useTheme();

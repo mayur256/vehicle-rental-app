@@ -4,7 +4,7 @@ import 'react-native-reanimated';
 import 'react-native-gesture-handler';
 import { Stack } from 'expo-router';
 
-import { ThemeProvider } from '../src/theme/index';
+import { ThemeProvider } from '@/src/theme/index';
 
 export default function RootLayout() {
   return (

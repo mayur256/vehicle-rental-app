@@ -1,7 +1,15 @@
-import { HomePage } from '../../src/ui/pages';
-import { useRouter } from 'expo-router';
+import { useNavigation, RouteProp } from '@react-navigation/native';
+import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import type { HomeTabsParamList } from '@/src/navigation/types';
+import { HomePage } from '@/src/ui/pages';
 
 export default function Home() {
-  const router = useRouter();
-  return <HomePage navigation={{ navigate: router.push }} />;
+  const navigation = useNavigation<BottomTabNavigationProp<HomeTabsParamList, 'Home'>>();
+  const route: RouteProp<HomeTabsParamList, 'Home'> = {
+    key: 'Home',
+    name: 'Home',
+    params: undefined,
+  };
+  
+  return <HomePage navigation={navigation} route={route} />;
 }
